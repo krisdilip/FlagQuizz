@@ -1,0 +1,19 @@
+<ion-view view-title={{pageTitle}}>
+	<div class="bar bar-subheader item-input-inset bar-dark" ng-show="showSubheader">
+		<label class="item-input-wrapper">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-model="query.name">
+		</label>
+	</div>
+	
+	<ion-content class="has-subheader">
+		<div class="list">
+			<a class="item item-thumbnail-left item-text-wrap animate-repeat" href="#" ng-repeat="c in countries | filter:query" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+			  <img ng-src="{{c.flag}}"  style="width: 80px; height: 60px;">
+			  <h2>{{c.name}}</h2>
+			  <p>Capital:&nbsp{{c.capital[0]}}</sup></p>
+			  <p>Lang:&nbsp{{c.lang[0]}}</sup></p>			  
+			</a>			
+		</div>
+	</ion-content>
+</ion-view>
